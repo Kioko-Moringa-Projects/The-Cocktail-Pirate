@@ -29,3 +29,31 @@ const searchCocktail = (e) => {
           //console.log(data);
           // Update the results heading with user search input
           resultHeading.innerHTML = `<h2>Search results for '${searchInput}':</h2>`;
+           // Clear previously search cocktails and update results heading if search input is unavailable
+        if (data.drinks === null) {
+            cocktailsElement.innerHTML = '';
+            resultHeading.innerHTML = `<h2>There are no results for '${searchInput}'.</h2>`;
+  
+            // Else display the results from api in UI
+          } else {
+            cocktailsElement.innerHTML = data.drinks
+              .map(
+                (cocktail) => `
+                  <div class="cocktail">
+                      <img src="${cocktail.strDrinkThumb}" alt= "${cocktail.strDrink}" />
+                      <div class="cocktail-info" data-cocktailID="${cocktail.idDrink}">
+                          <h3>${cocktail.strDrink}</h3>
+                      </div>
+                  </div>
+                  `
+              )
+              .join('');
+          }
+        });
+          // Clear the text in search
+    search.value = '';
+} else {
+  // If nothing was input in search
+  alert('ENTER A SEARCH TERM!');
+}
+};

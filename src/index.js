@@ -17,7 +17,6 @@ const searchCocktail = (e) => {
   
     // Get the search which input by the user
     const searchInput = search.value;
-    //console.log(searchInput);
   
     // Fetch search data from thecocktaildb API
     if (searchInput.trim()) {
@@ -36,6 +35,7 @@ const searchCocktail = (e) => {
   
             // Else display the results from api in UI
           } else {
+//Note: This function is not complete. I am supposed to add on click to show details about the searched cocktail
             cocktailsElement.innerHTML = data.drinks
               .map(
                 (cocktail) => `
@@ -50,10 +50,32 @@ const searchCocktail = (e) => {
               .join('');
           }
         });
+ // End of function to research
           // Clear the text in search
     search.value = '';
 } else {
   // If nothing was input in search
   alert('ENTER A SEARCH TERM!');
 }
+};
+// Event listener
+submit.addEventListener('submit', searchCocktail);
+
+// Get indiviual cocktail information
+const getCocktailInfo = (e) => {
+  const cocktailInfo = e.path.find((item) => {
+    // Find individual cocktail info
+    if (item.classList) {
+      return item.classList.contains('cocktail-info');
+    } else {
+      return false;
+    }
+  });
+  // Get the cocktail ID
+  if (cocktailInfo) {
+    // create a variable for cocktail ID
+    const cocktailID = cocktailInfo.getAttribute('data-cocktailID');
+    //console.log(cocktailID);
+    getCocktailById(cocktailID);
+  }
 };

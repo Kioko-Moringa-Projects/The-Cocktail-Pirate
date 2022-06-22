@@ -151,3 +151,5 @@ const getRandomCocktail = () => {
       addSelectedCocktailToDOM(randomCocktail);
     });
 };
+// Event listener
+random.addEventListener('click', getRandomCocktail);

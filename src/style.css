@@ -174,4 +174,39 @@ body {
     margin: 0 5px 5px 0;
   }
   
- 
+  /* RESPONSIVE BEHAVIOR */
+  @media (max-width: 800px) {
+    .cocktails {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .cocktails {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .cocktail {
+      height: 200px;
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    input[type='text'] {
+      width: 100%;
+    }
+  
+    .cocktails {
+      grid-template-columns: 1fr;
+    }
+  
+    .cocktail {
+      height: 300px;
+      width: 300px;
+    }
+  
+    .selected-cocktail img {
+      width: 200px;
+    }
+  }

@@ -1,6 +1,6 @@
 # The-Cocktail-Pirate
 
-                                                            # The Cocktail Pirate
+                                            The Cocktail Pirate
 Creating cocktails demands significant beverage knowledge and the ability to blend alcoholic beverages according to current trends. There are two types of beverages: alcoholic and non-alcoholic drinks. The cocktail is made up of a mix of alcoholic beverages and juices and other soft drinks that are popular for their health advantages and features. Alcohol consumption with food is reported to reveal demographic information such as age, gender, and other aspects. It will be considered a summer drink in the same way that wine and beer are.
 
 

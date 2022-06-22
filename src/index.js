@@ -79,3 +79,75 @@ const getCocktailInfo = (e) => {
     getCocktailById(cocktailID);
   }
 };
+// Event listener
+cocktailsElement.addEventListener('click', getCocktailInfo);
+
+// Get cocktails by ID using API
+const getCocktailById = (cocktailID) => {
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailID}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      //console.log(data);
+      const cocktail = data.drinks[0];
+      addSelectedCocktailToDOM(cocktail);
+    });
+};
+
+// Add the selected cocktail information to DOM
+const addSelectedCocktailToDOM = (cocktail) => {
+  const ingredients = [];
+
+  // loop through the ingredients in api up to 15 if an ingredient and measurement is available add to array if not break loop
+  for (let i = 1; i <= 15; i++) {
+    if (cocktail[`strIngredient${i}`]) {
+      // push avail ingredient and measurement to array
+      ingredients.push(
+        `${cocktail[`strIngredient${i}`]} - ${cocktail[`strMeasure${i}`]}`
+      );
+    } else {
+      // break if there is no ingredient or measurement
+      break;
+    }
+  }
+  // remove list of all cocktails from DOM
+  cocktailsElement.innerHTML = '';
+  // Add  selected cocktail information to DOM
+  selectedCocktail.innerHTML = `
+    <div class="selected-cocktail">
+      <h1>${cocktail.strDrink}</h1>
+      <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" />
+      <div class="selected-cocktail-info">
+        ${cocktail.strCategory ? `<p>${cocktail.strCategory}</p>` : ''}
+        ${cocktail.strAlcoholic ? `<p>${cocktail.strAlcoholic}</p>` : ''}
+      </div>
+      <div class="main">
+        <p>${cocktail.strInstructions}</p>
+        <h2>Ingredients</h2>
+        <ul>
+          ${ingredients
+            .map((ingredientMeasurement) => `<li>${ingredientMeasurement}</li>`)
+            .join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+};
+
+// Get random cocktail from API
+const getRandomCocktail = () => {
+  // clear DOM
+  cocktailsElement.innerHTML = '';
+  resultHeading.innerHTML = `<h2>Random Cocktail:</h2>`;
+
+  // random coctail finder
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+    .then((res) => res.json())
+    .then((data) => {
+      //console.log(data);
+      const randomCocktail = data.drinks[0];
+
+      addSelectedCocktailToDOM(randomCocktail);
+    });
+};

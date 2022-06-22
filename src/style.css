@@ -129,4 +129,24 @@ body {
     opacity: 1;
   }
   
+  /* SELECTED-COCKTAIL CLASS FROM SCRIPT.JS */
+  .selected-cocktail {
+    margin: 30px auto;
+    width: 70%;
+  }
+  
+  .selected-cocktail img {
+    width: 300px;
+    margin: 15px;
+    border: 4px #2b2b2b solid;
+    border-radius: 25px;
+  }
+  
+  .selected-cocktail-info {
+    margin: 10px;
+    padding: 10px;
+    border: 2px #7a7a7a dashed;
+    border-radius: 25px;
+  }
+  
   

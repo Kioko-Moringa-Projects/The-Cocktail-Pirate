@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cocktail Pirate</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./img/cocktail-logo.jpg"
+      type="image/x-icon"
+    />
+    <title>The Cocktail Pirate | Find Hundreds Of Cocktails</title>
+  </head>
+  <body>
+    <section class="search-section">
+      <h1 class="app-title">The Cocktail Pirate</h1>
+      <div class="search-container flex">
+        <form class="flex" id="submit">
+          <input
+            type="text"
+            id="search"
+            placeholder="Search for cocktails or keywords"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <button class="random-btn" id="random">
+          Random
+          <i class="fas fa-random"></i>
+        </button>
+      </div>
+    </section>
+
+
+    <script src="./src/index.js"></script>
+  </body>
 </html>

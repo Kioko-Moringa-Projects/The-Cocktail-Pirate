@@ -9,7 +9,8 @@ The Cocktail Pirate is a single page HTML which can be used to display get vario
 The following website is already configured with a public API and is available for use through the following GitHub pages link below. One can also clone the repository for use and can configure according to one's preference.
 
  ## GitHub Pages link
- 
+
+https://kioko91.github.io/The-Cocktail-Pirate/
 
  ## Copyright and License information
  MIT License

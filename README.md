@@ -1,4 +1,4 @@
-#                                   The-Cocktail-Pirate
+#        Title:                           The Cocktail Pirate
 
 ## Author
 Calvin Kioko
